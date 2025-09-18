@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Form</title>
+  {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+  <div class="container">
+
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h1>Update  Recipe</h1>
+
+      <div class="mb-3">
+        <label for="recipeName" class="form-label">Recipe name</label>
+        <input name="receipe_name" value='{{receipes.receipe_name}}' id="recipeName" type="text" class="form-control" />
+      </div>
+
+      <div class="mb-3">
+        <label for="recipeDesc" class="form-label">Recipe description</label>
+       <textarea name="receipe_description" id="recipeDesc" class="form-control">{{receipes.receipe_description}}</textarea>
+
+
+      <div class="mb-3">
+        <label for="recipeImage" class="form-label">Recipe image</label>
+        <input name="receipe_image" id="recipeImage" type="file" class="form-control" />
+      </div>
+
+      <button type="submit">Update Receipe</button>
+    </form>
+ 
+</body>
+</html>
